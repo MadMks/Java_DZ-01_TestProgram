@@ -64,6 +64,6 @@ public class Game {
     // Вывод сообщения об ошибке.
     private void showErrorLevel(){
         System.out.println(" [error] Вы ввели неправильный уровень!");
-        System.out.println();
+//        System.out.println();
     }
 }
