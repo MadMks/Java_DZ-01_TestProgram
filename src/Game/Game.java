@@ -13,6 +13,7 @@ public class Game {
     public Game(){
         factory = new LevelFactory();
     }
+
     // Запуск игры.
     public void start(){
 
@@ -24,6 +25,7 @@ public class Game {
             level.start();
         }
     }
+
     // Вывод меню.
     private void showMenu(){
 
@@ -43,6 +45,7 @@ public class Game {
         difficulty = Difficulty.getDifficulty(codeLevel);
     }
 
+    // Вывод тела меню.
     private void showBody() {
         System.out.println("\nВыберите уровень сложности:");
 
@@ -52,11 +55,13 @@ public class Game {
         System.out.print("Введите число (1 или 2): ");
     }
 
+    // Получение выбора пользователя.
     private int getUserValue(){
         Scanner scanner = new Scanner(System.in);
         return scanner.nextInt();
     }
 
+    // Вывод сообщения об ошибке.
     private void showErrorLevel(){
         System.out.println(" [error] Вы ввели неправильный уровень!");
         System.out.println();

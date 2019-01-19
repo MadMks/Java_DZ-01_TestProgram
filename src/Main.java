@@ -1,5 +1,4 @@
 import Game.Game;
-import Level.Difficulty;
 
 public class Main {
 
