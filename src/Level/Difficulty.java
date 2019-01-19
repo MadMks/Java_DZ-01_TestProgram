@@ -37,4 +37,11 @@ public enum Difficulty {
 
         return tempLevel;
     }
+
+    public static boolean isExists(int codeLevel){
+        if (Difficulty.getDifficulty(codeLevel) != null){
+            return true;
+        }
+        return false;
+    }
 }

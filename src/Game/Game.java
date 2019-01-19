@@ -12,17 +12,11 @@ public class Game {
 
     public Game(){
         factory = new LevelFactory();
-//        difficulty = Difficulty.Easy;
     }
-
-    public Game(Difficulty difficulty){
-        factory = new LevelFactory();
-//        this.difficulty = difficulty;
-    }
-
+    // Запуск игры.
     public void start(){
 
-        menu();
+        showMenu();
 
         level = factory.create(difficulty);
 
@@ -30,20 +24,41 @@ public class Game {
             level.start();
         }
     }
+    // Вывод меню.
+    private void showMenu(){
 
-    public void menu(){
-        System.out.println("Выберите уровень сложности:");
+        int codeLevel = 0;
+        boolean isLevelExists = false;
+
+        do {
+            showBody();
+            codeLevel = getUserValue();
+            isLevelExists = Difficulty.isExists(codeLevel);
+            System.out.println();
+
+            if (!isLevelExists) { showErrorLevel(); }
+
+        } while (!isLevelExists);
+
+        difficulty = Difficulty.getDifficulty(codeLevel);
+    }
+
+    private void showBody() {
+        System.out.println("\nВыберите уровень сложности:");
 
         System.out.println("1 - Easy");
         System.out.println("2 - Hard");
 
-        Scanner scanner = new Scanner(System.in);
         System.out.print("Введите число (1 или 2): ");
-        int codeLevel = scanner.nextInt();
+    }
 
-        System.out.println("\nВы выбрали: " + codeLevel);
+    private int getUserValue(){
+        Scanner scanner = new Scanner(System.in);
+        return scanner.nextInt();
+    }
 
-//        if ()
-        difficulty = Difficulty.getDifficulty(codeLevel);
+    private void showErrorLevel(){
+        System.out.println(" [error] Вы ввели неправильный уровень!");
+        System.out.println();
     }
 }
