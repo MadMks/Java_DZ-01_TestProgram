@@ -1,4 +1,8 @@
 package Level;
 
-public class Easy {
+public class Easy extends Level {
+    @Override
+    public void start() {
+
+    }
 }

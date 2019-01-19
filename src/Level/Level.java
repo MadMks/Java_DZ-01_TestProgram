@@ -1,4 +1,5 @@
 package Level;
 
-public class Level {
+public abstract class Level {
+    public abstract void start();
 }

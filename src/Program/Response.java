@@ -1,3 +1,5 @@
+package Program;
+
 public enum Response {
     OK(200, "Ok");
 
