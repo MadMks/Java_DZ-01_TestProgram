@@ -16,7 +16,25 @@ public enum Difficulty {
         return code;
     }
 
+    public void setCode(int code){
+        this.code = code;
+    }
+
     public String getTitle(){
         return title;
+    }
+
+    public static Difficulty getDifficulty(int codeLevel){
+
+        Difficulty tempLevel = null;
+
+        for(Difficulty level: Difficulty.values() ){
+            if (level.getCode() == codeLevel){
+                tempLevel = level;
+                break;
+            }
+        }
+
+        return tempLevel;
     }
 }
