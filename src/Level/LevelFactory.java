@@ -1,11 +1,11 @@
 package Level;
 
 public class LevelFactory {
-    public Level create(String level){
-        switch (level){
-            case "easy":
+    public Level create(Difficulty difficulty){
+        switch (difficulty){
+            case Easy:
                 return new Easy();
-            case "hard":
+            case Hard:
                 return new Hard();
             default:
                 return null;

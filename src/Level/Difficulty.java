@@ -11,4 +11,12 @@ public enum Difficulty {
         this.code = code;
         this.title = title;
     }
+
+    public int getCode(){
+        return code;
+    }
+
+    public String getTitle(){
+        return title;
+    }
 }
